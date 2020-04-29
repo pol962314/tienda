@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Login</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/bootstrapSocial/bootstrap-social.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <h1 class="logo-name" style="text-align: center;">BA</h1>
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+            </div>
+            <h3>Bienvenido a Bodegaap para</h3>
+            <h3>Vendedor</h3>
+            <p>Inicia y encuentra tus pedidos.
+                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+            </p>
+            <form class="m-t" role="form" action="pedidos-nuevos.html">
+                <div class="form-group" style="text-align: left;">
+                    <input type="email" class="form-control" placeholder="E-mail" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="contraseña" required="">
+                </div>
+                <div class="checkbox" style="margin-left: 3%;">
+                    <label class="checkbox" for="closeButton">
+                        <input id="closeButton" type="checkbox" value="checked" class="input-mini"/>Recordar cuenta
+                    </label>
+                </div>
+                <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+                <script>
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {                    
+                    });
+                });
+                </script>
+                <button type="submit" class="btn btn-primary block full-width m-b">Entrar</button>
+                <a href="recuperar_password.html"><small>¿Olvidaste tu contraseña?</small></a>
+                <p class="text-muted text-center"><small>¿No estás registrado?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="registro_vendedor.html">Crear una cuenta</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
