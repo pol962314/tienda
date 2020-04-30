@@ -184,7 +184,7 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>Bodegaap</h2>
+                <h2>BodegApp</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="index.html">Home</a>
@@ -199,7 +199,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="padding-bottom: 15%;">
             <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
@@ -222,18 +222,7 @@
                                 <div class="col-md-8">
                                     <div class="ibox-content m-b-sm border-bottom">
                                         <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="status">Marca</label>
-                                                    <select name="status" id="status" class="form-control">
-                                                        <option value="0" selected></option>
-                                                        <option value="1">Gloria</option>
-                                                        <option value="1">San Fernando</option>
-                                                        <option value="1">Nestle</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label class="control-label" for="status">Tipo de producto</label>
                                                     <select name="status" id="status" class="form-control">
@@ -244,7 +233,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label class="control-label" for="product_name">Nombre de producto</label>
                                                     <input type="text" id="product_name" name="product_name" value="" placeholder="Nombre de producto" class="form-control">
@@ -260,19 +249,199 @@
                                     <div class="ibox">
                                         <div class="ibox-title">
                                             <h5><i class="fa fa-shopping-cart" style="padding-right: 15px;"></i>Monto del Pedido</h5>
-                                        </div>
-                                        
+                                        </div>                                       
                                         <div class="ibox-content">
                                             <span class="text-muted small">
                                                 La bodega Mi Jefita tiene un monto mínimo de S/. 15
-                                                </span> <br>
-                                            <span>
-                                                <br>
-                                                Total
-                                            </span>
-                                            <h2 class="font-bold">
-                                                S/. 28.00
-                                            </h2>  
+                                                </span> <br> 
+                                                <span>
+                                                    <br>
+                                                    Total
+                                                </span>                                            
+                                                <div class="pull-right" style="margin-top: 10px;">
+                                                    <button type="button" class="btn btn-outline btn-primary" style="padding-top: 5%;" data-toggle="modal" data-target="#myModal5"><i class="fa fa-file-text-o" style="padding-right: 15px;"></i>Ver Pedido</button>                                          
+                                                </div>
+
+                                                <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                <h4 class="modal-title">Carrito de compra</h4>
+<!--                                                                 <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+ -->                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="ibox">
+                                                                    <div class="ibox-title">
+                                                                        <span class="pull-right">(<strong>3</strong>) items</span>
+                                                                        <h5>Productos en tu carrito</h5>
+                                                                    </div>
+                                                                    <div class="ibox-content">      
+                                                                        <div class="table-responsive">
+                                                                            <table class="table shoping-cart-table">
+                                            
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td width="90">
+                                                                                        <div class="cart-product-imitation">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="desc">
+                                                                                        <h3>
+                                                                                        <a href="#" class="text-navy">
+                                                                                            Atún Florida
+                                                                                        </a>
+                                                                                        </h3>
+                                                                                        <p class="small">
+                                                                                            Atún florida en filete de 500gr.
+                                                                                        </p>
+                                                                                        <dl class="small m-b-none">
+                                                                                            <dt>Description lists</dt>
+                                                                                            <dd>Description por parte del vendedor.</dd>
+                                                                                        </dl>
+                                            
+                                                                                        <div class="m-t-sm">
+                                                                                            <!-- <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a> -->
+                                                                                            |
+                                                                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i> Eliminar Producto</a>
+                                                                                        </div>
+                                                                                    </td>
+                                            
+                                                                                    <td>
+                                                                                        S/. 5.50
+                                                                                        <s class="small text-muted">S/. 6.50</s>
+                                                                                    </td>
+                                                                                    <td width="65">
+                                                                                        <input type="text" class="form-control" placeholder="2" style="width: 65px;">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <h4>
+                                                                                            S/. 11.00
+                                                                                        </h4>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                                    <div class="ibox-content">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table shoping-cart-table">                                            
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td width="90">
+                                                                                        <div class="cart-product-imitation">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="desc">
+                                                                                        <h3>
+                                                                                            <a href="#" class="text-navy">
+                                                                                                Aceite Primor
+                                                                                            </a>
+                                                                                        </h3>
+                                                                                        <p class="small">
+                                                                                            Aceite Primor de 850mL.
+                                                                                        </p>
+                                                                                        <dl class="small m-b-none">
+                                                                                            <dt>Description lists</dt>
+                                                                                            <dd>Description del vendedor.</dd>
+                                                                                        </dl>
+                                            
+                                                                                        <div class="m-t-sm">
+                                                                                            <!-- <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a> -->
+                                                                                            |
+                                                                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i>Eliminar Producto</a>
+                                                                                        </div>
+                                                                                    </td>
+                                            
+                                                                                    <td>
+                                                                                        S/. 7.00
+                                                                                        <s class="small text-muted">S/. 8.50</s>
+                                                                                    </td>
+                                                                                    <td width="65">
+                                                                                        <input type="text" class="form-control" placeholder="2" style="width: 65px;">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <h4>
+                                                                                            S/. 14.00
+                                                                                        </h4>
+                                                                                    </td>
+                                            
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                                    <div class="ibox-content">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table shoping-cart-table">                                            
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td width="90">
+                                                                                        <div class="cart-product-imitation">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="desc">
+                                                                                        <h3>
+                                                                                            <a href="#" class="text-navy">
+                                                                                                Arroz Costeño
+                                                                                            </a>
+                                                                                        </h3>
+                                                                                        <p class="small">
+                                                                                            Arroz Costeño suelto.
+                                                                                        </p>
+                                                                                        <dl class="small m-b-none">
+                                                                                            <dt>Description lists</dt>
+                                                                                            <dd>Description del vendedor.</dd>
+                                                                                        </dl>
+                                            
+                                                                                        <div class="m-t-sm">
+                                                                                            <!-- <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a> -->
+                                                                                            |
+                                                                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i>Eliminar Producto</a>
+                                                                                        </div>
+                                                                                    </td>
+                                            
+                                                                                    <td>
+                                                                                        S/. 1.00 /kg.
+                                                                                    </td>
+                                                                                    <td width="65">
+                                                                                        <input type="text" class="form-control" placeholder="3 kg." style="width: 65px;">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <h4>
+                                                                                            S/. 3.00
+                                                                                        </h4>
+                                                                                    </td>
+                                            
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                            
+                                                                    </div>
+                                                                    <!-- <div class="ibox-content">                                            
+                                                                        <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                                                                        <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+                                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                 <div>                                                  
+                                                    <h2 class="font-bold">
+                                                        S/. 28.00
+                                                    </h2>  
+                                                 </div>                                                
                                         </div>
                                     </div>
                                 </div>
@@ -290,20 +459,19 @@
                                                     </div>
                                                     <div class="product-desc">
                                                         <span class="product-price">
-                                                            S/. 5.00 / Uni
+                                                            S/. 5.00 /Uni
                                                         </span>
                                                         <small class="text-muted">Enlatados - atún</small>
                                                         <a href="#" class="product-name"> Atún San Fernando</a>       
                                                         <div class="small m-t-xs" style="text-align: left;">
-                                                            Atún San Fernando en file de 850gr.
+                                                            Atún San Fernando en filete de 850gr.
                                                         </div>
                                                         <div class="m-t text-righ">
                                                             <a href="#" class="btn btn-xs btn-outline btn-primary">Agregar <i class="fa fa-shopping-cart"></i> </a>
                                                         </div>
 
                                                         <div class="table-responsive">
-                                                            <table class="table shoping-cart-table">
-                            
+                                                            <table class="table shoping-cart-table">                            
                                                                 <tbody>
                                                                 <tr>
                                                                     <td>
@@ -314,8 +482,6 @@
                                                                     <td>
                                                                         <input type="text" class="form-control" placeholder="1">
                                                                     </td>
-                                                                    
-                            
                                                                 </tr>
                                                                 </tbody>
                                                             </table>
@@ -334,19 +500,35 @@
                                                     </div>
                                                     <div class="product-desc">
                                                         <span class="product-price">
-                                                            $10
+                                                            S/ 5.50 /Uni
                                                         </span>
-                                                        <small class="text-muted">Category</small>
-                                                        <a href="#" class="product-name"> Product</a>
+                                                        <small class="text-muted">Enlatados - atún</small>
+                                                        <a href="#" class="product-name"> Atún Florida</a>
                         
                         
                         
                                                         <div class="small m-t-xs">
-                                                            Many desktop publishing packages and web page editors now.
+                                                            Atún florida en filetes de 500gr la presentación.
                                                         </div>
                                                         <div class="m-t text-righ">
-                        
-                                                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-primary">Agregado<i class="fa fa-shopping-cart"></i> </a>
+                                                        </div>
+
+                                                        <div class="table-responsive">
+                                                            <table class="table shoping-cart-table">                            
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h4>
+                                                                            Cant.
+                                                                        </h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="form-control" placeholder="2">
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -361,19 +543,32 @@
                                                     </div>
                                                     <div class="product-desc">
                                                         <span class="product-price">
-                                                            $10
+                                                            S/. 7.00 /Uni
                                                         </span>
-                                                        <small class="text-muted">Category</small>
-                                                        <a href="#" class="product-name"> Product</a>
-                        
-                        
-                        
+                                                        <small class="text-muted">Embotellado - Aceite</small>
+                                                        <a href="#" class="product-name">Aceite Primor</a>
                                                         <div class="small m-t-xs">
-                                                            Many desktop publishing packages and web page editors now.
+                                                            Aceite Primor en presentación de 850mL.
                                                         </div>
                                                         <div class="m-t text-righ">
-                        
-                                                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-primary">Agregado <i class="fa fa-shopping-cart"></i> </a>
+                                                        </div>
+
+                                                        <div class="table-responsive">
+                                                            <table class="table shoping-cart-table">                            
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h4>
+                                                                            Cant.
+                                                                        </h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="form-control" placeholder="2">
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -389,19 +584,35 @@
                                                     </div>
                                                     <div class="product-desc">
                                                         <span class="product-price">
-                                                            $10
+                                                            S/. 1.00 /Kg.
                                                         </span>
-                                                        <small class="text-muted">Category</small>
-                                                        <a href="#" class="product-name"> Product</a>
+                                                        <small class="text-muted">Abarrotes - Arroz</small>
+                                                        <a href="#" class="product-name">Arroz Costeño</a>
                         
                         
                         
                                                         <div class="small m-t-xs">
-                                                            Many desktop publishing packages and web page editors now.
+                                                            Arroz Costeño suelto de S/1.00 el Kg.
                                                         </div>
                                                         <div class="m-t text-righ">
-                        
-                                                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-primary">Agregado<i class="fa fa-shopping-cart"></i> </a>
+                                                        </div>
+
+                                                        <div class="table-responsive">
+                                                            <table class="table shoping-cart-table">                            
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h4>
+                                                                            Cant.
+                                                                        </h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="form-control" placeholder="3Kg">
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -413,40 +624,16 @@
 
                             </div>
                         </div>
-
-                        <h1>Confirma tu pedido</h1>
-                        <div class="step-content">
-                            <div class="text-center m-t-md">
-                                <h2>This is step 3</h2>
-                                <p>
-                                    This is last content.
-                                </p>
-                            </div>
-                        </div>
-                        <h1>Escoge forma de pago</h1>
-                        <div class="step-content">
-                            <div class="text-center m-t-md">
-                                <h2>This is step 3</h2>
-                                <p>
-                                    This is last content.
-                                </p>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
         </div>
-        
         <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
-            <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
-            </div>
+            <iframe src="footer.html" frameborder="0"  style="width: 100%; height: 40px;"></iframe>
         </div>
+        
 
     </div>
 </div>
@@ -464,7 +651,7 @@
 <script src="js/plugins/pace/pace.min.js"></script>
 
  <!-- Steps -->
- <script src="js/plugins/steps/jquery.steps.min.js"></script>
+ <script src="js/plugins/stepsProd/jquery.steps.min.js"></script>
 
  <!-- Jquery Validate -->
  <script src="js/plugins/validate/jquery.validate.min.js"></script>
