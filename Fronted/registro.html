@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <div id="vendedor" style="text-align: center; margin: 0px 10% 0 10% ; display: ;" >
+    <div id="vendedor" style="text-align: center; margin: 0px 10% 0 10% ; display: none;" >
             <div class="row" style="text-align: left;">
                 <div class="col-lg-12">
                     <div class="ibox">                   
@@ -142,41 +142,52 @@
                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="11">
                                             </div>
                                             <div class="form-group col-lg-10">
+                                                <label>Razón Social</label>
+                                                <input id="razonsocial" name="razonsocial" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group col-lg-10">
                                                 <label>Dirección de la Bodega</label>
                                                 <input id="address" name="address" type="text" class="form-control required">
-                                            </div>                                     
-                                        </div>
-                                        <div class="col-lg-5" id="map">
-                                            <div id="map" style="position: relative; width: 70%;"></div>
-                                            <input type="text" id="coords" />
-                                        </div>
-                                    </div> 
-                                    
-                                    <div class="row" style="padding: 0px 15px 0px 15px;">
-                                        <div class="col-lg-12" style="text-align: left;">
-                                            <p data-toggle="modal" data-target="#myModal6" style="cursor: pointer; text-decoration: underline   ;">Leer Terminos y Condiciones</p>
-                                            <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
-                                                <div class="modal-dialog modal-sm">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                            <h4 class="modal-title">Términos y condiciones</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                                                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                                                                remaining essentially unchanged.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-primart" data-dismiss="modal">Cerrar</button>
+                                            </div>    
+                                            <div class="col-lg-12" style="text-align: left;">
+                                                <p data-toggle="modal" data-target="#myModal6" style="cursor: pointer; text-decoration: underline   ;">Leer Terminos y Condiciones</p>
+                                                <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                <h4 class="modal-title">Términos y condiciones</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                                    remaining essentially unchanged.</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primart" data-dismiss="modal">Cerrar</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div style="text-align: left;">
-                                                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">Estoy de acuerdo con los Terminos y Condiciones</label>
-                                                <br>
-                                            </div> 
+                                                <div style="text-align: left;">
+                                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">Estoy de acuerdo con los Terminos y Condiciones</label>
+                                                    <br>
+                                                </div> 
+                                            </div>                                 
+                                        </div>
+                                        <div class="col-lg-5">
+                                                <div class="ibox ">
+                                                    <div class="ibox-title">
+                                                        <h5>Ubique su negocio.</h5>
+                                                    </div>
+                                                    <div class="ibox-content">                                                    
+                                                        <div class="google-map" id="map"></div>
+                                                        <!-- <input type="text" id="coords" /> -->
+                                                        <!-- <div class="pull-right">
+                                                            <button class="btn btn-primary btn-sm btn-outline"><i class="fa fa-map-marker" style="padding-right: 15px;"></i>Fijar Dirección</button>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>    
                                 </fieldset>
@@ -371,6 +382,7 @@
             draggable: true,
             animation: google.maps.Animation.DROP,
             position: new google.maps.LatLng(coords.lat,coords.lng),
+            icon: 'icon/cursor-64.png',
     
           });
           //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
