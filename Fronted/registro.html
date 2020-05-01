@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Register</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/plugins/bootstrapSocial/bootstrap-social.css" rel="stylesheet">
+    <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div style="width: 100%; text-align: center;">
+        <iframe src="header_inicio.html" frameborder="0" style="width: auto; height: 250px;"></iframe>
+    </div>   
+
+    <div class="form-group" id="toastTypeGroup" style="text-align: center;" >
+        <h3>Registrate a Bodegaap</h3>
+        <div class="radio" style="display: inline;">
+            <label class="radio" style="display: inline; margin-right: 5px;">
+                <input type="radio" name="perfil" class="perfil" value="Cliente" checked />Cliente
+            </label>
+        </div>
+        <div class="radio" style="display: inline;">
+            <label class="radio" style="display: inline; margin-left: 5px;">
+                <input type="radio" name="perfil" class="perfil" value="Vendedor" />Vendedor
+            </label>
+        </div>
+    </div>
+
+    <div id="cliente" class="middle-box text-center loginscreen   animated fadeInDown" style="padding: 0;">        
+        <div">
+            <p>Crea una cuenta y comienza a comprar.</p>        
+            <form class="m-t" role="form" action="login.html">
+                <div class="form-group">
+                <input type="text" class="form-control" name="first_name" placeholder="Nombres" value="">
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" name="last_name" placeholder="Apellido Paterno" value="">
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" name="last_name_m" placeholder="Apellido Materno" value="">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" value="">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" name="celular" placeholder="Número celular" value="">
+                </div>   
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password2" placeholder="Repetir contraseña">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox i-checks" style="text-align: center;"><label style="padding: 0px;"> <input type="checkbox"><i style="padding: 5px;"></i>Acepto los terminos y condiciones comerciales </label></div>
+                </div>         
+                
+                <button type="submit" class="btn btn-primary block full-width m-b">Registrar</button>
+                <a class="btn btn-block btn-social btn-facebook" style="text-align: center;" >
+                    <span class="fa fa-facebook"></span> Registrarse con Facebook
+                </a>
+
+                <p class="text-muted text-center"><small>¿Ya tienes una cuenta?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="/login_usuario.html">Ingresa</a>
+            </form>
+        </div>
+    </div>
+
+    <div id="vendedor" style="text-align: center; margin: 0px 10% 0 10% ; display: ;" >
+            <div class="row" style="text-align: left;">
+                <div class="col-lg-12">
+                    <div class="ibox">                   
+                        <div class="ibox-content">
+                            <h2>
+                                Registro de bodega a BodegApp
+                            </h2>
+                            <p>
+                                Realiza el registro de tu bodega a BodegApp para incrementar tus ventas!
+                            </p>    
+                            <form id="form" action="login_vendedor.html" class="wizard-big">
+    
+                                <h1>Datos del Vendedor</h1>
+                                <fieldset>
+                                    <h2>Registre los datos del Vendedor</h2>
+                                    <p>Se registra al dueño de la bodega o quien se encuentre a cargo.</p><br>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Nombre</label>
+                                                <input id="name" name="name" type="text" class="form-control required">
+                                            </div>     
+                                            <div class="form-group">
+                                                <label>Apellido Paterno</label>
+                                                <input id="apellidop" name="apellidop" type="text" class="form-control required">
+                                            </div>                                        
+                                            <div class="form-group">
+                                                <label>Apellido Materno</label>
+                                                <input id="apellidom" name="apellidom" type="text" class="form-control required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">  
+                                            <div class="form-group">
+                                                <label>Teléfono</label>
+                                                <input id="celular" name="celular" type="number" class="form-control required" value=""
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="9">
+                                            </div>                                  
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input id="email" name="email" type="email" class="form-control required email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contraseña</label>
+                                                <input id="password" name="password" type="password" class="form-control required">
+                                            </div>
+                                        </div>                                   
+                                    </div>
+                                </fieldset>
+                                
+                                <h1>Datos de la Bodega</h1>
+                                <fieldset>
+                                    <h2>Registra los datos de tu Bodega</h2><br>
+                                    <div class="row" style="text-align: left;">
+                                        <div class="col-lg-7">
+                                            <div class="form-group col-lg-10">
+                                                <label>Nombre de la Bodega</label>
+                                                <input id="userName" name="userName" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group col-lg-10">
+                                                <label>RUC</label>
+                                                <input type="number" class="form-control required" name="ruc" value=""
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="11">
+                                            </div>
+                                            <div class="form-group col-lg-10">
+                                                <label>Dirección de la Bodega</label>
+                                                <input id="address" name="address" type="text" class="form-control required">
+                                            </div>                                     
+                                        </div>
+                                        <div class="col-lg-5" id="map">
+                                            <div id="map" style="position: relative; width: 70%;"></div>
+                                            <input type="text" id="coords" />
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="row" style="padding: 0px 15px 0px 15px;">
+                                        <div class="col-lg-12" style="text-align: left;">
+                                            <p data-toggle="modal" data-target="#myModal6" style="cursor: pointer; text-decoration: underline   ;">Leer Terminos y Condiciones</p>
+                                            <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                            <h4 class="modal-title">Términos y condiciones</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                                                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                                                remaining essentially unchanged.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primart" data-dismiss="modal">Cerrar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="text-align: left;">
+                                                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">Estoy de acuerdo con los Terminos y Condiciones</label>
+                                                <br>
+                                            </div> 
+                                        </div>
+                                    </div>    
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+    </div> 
+    <div style=" width: 100%; margin-top: 5%;">
+        <iframe src="footer.html" frameborder="0"  style="width: 100%; height: 40px;"></iframe>
+    </div>
+    
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Steps -->
+    <script src="js/plugins/steps/jquery.steps.min.js"></script>
+
+    <!-- Jquery Validate -->
+    <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            $(".perfil").click(function(evento){
+                var valor = $(this).val();
+                
+                if(valor == 'Cliente'){
+                    $("#cliente").css("display", "block");
+                    $("#vendedor").css("display", "none");
+                }else{
+                    $("#cliente").css("display", "none");
+                    $("#vendedor").css("display", "block");
+                }
+            });
+
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+
+                    
+                                    
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    var form = $(this);
+                    var succ = false;
+                    form.click(function () {
+                        swal({
+                            title: "Gracias por el Registro!",
+                            text: "Revise el correo de confirmación en su correo",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#1ab394",
+                            confirmButtonText: "Aceptar",
+                            closeOnConfirm: false
+                        }, function () {
+                            // Submit form input
+                            form.submit();
+                        });
+                    });                        
+                }
+            
+            }).validate({
+                        errorPlacement: function (error, element)
+                        {
+                            element.before(error);
+                        },
+                        rules: {
+                            confirm: {
+                                equalTo: "#password"
+                            }
+                        }
+                    });
+
+        });
+
+        
+    </script>
+<script>
+    var marker;          //variable del marcador
+    var coords = {};    //coordenadas obtenidas con la geolocalización
+    
+    //Funcion principal
+    initMap = function () 
+    {
+    
+        //usamos la API para geolocalizar el usuario
+            navigator.geolocation.getCurrentPosition(
+              function (position){
+                coords =  {
+                  lng: position.coords.longitude,
+                  lat: position.coords.latitude
+                };
+                setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa    
+               
+              },function(error){console.log(error);});
+        
+    }
+    
+    
+    
+    function setMapa (coords)
+    {   
+          //Se crea una nueva instancia del objeto mapa
+          var map = new google.maps.Map(document.getElementById('map'),
+          {
+            zoom: 13,
+            center:new google.maps.LatLng(coords.lat,coords.lng),
+    
+          });
+    
+          //Creamos el marcador en el mapa con sus propiedades
+          //para nuestro obetivo tenemos que poner el atributo draggable en true
+          //position pondremos las mismas coordenas que obtuvimos en la geolocalización
+          marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: new google.maps.LatLng(coords.lat,coords.lng),
+    
+          });
+          //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
+          //cuando el usuario a soltado el marcador
+          marker.addListener('click', toggleBounce);
+          
+          marker.addListener( 'dragend', function (event)
+          {
+            //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+            document.getElementById("coords").value = this.getPosition().lat()+","+ this.getPosition().lng();
+          });
+    }
+    
+    //callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
+    
+    // Carga de la libreria de google maps 
+    
+        </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+
+</body>
+
+</html>
