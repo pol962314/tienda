@@ -20,6 +20,10 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
 
 
 </head>
@@ -206,23 +210,33 @@
                     <div id="wizard">
                         <h1>Escoge tu bodega</h1>
                         <div class="step-content">
-                            <div class="text-center m-t-md">
-                            <h2>Encuentra tu bodega</h2>
-                            <p>
-                                Indica el destino de tu pedido y encuentra las bodegas más cercanas.
-                            </p>
+                            <div class="row">  
+                                <div class="col-md-12">
+                                    <div class="ibox ">
+                                        <div class="ibox-title">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" id="product_name" name="product_name" value="" placeholder="Ingrese una dirección" class="form-control">
+                                                    </div>
+                                                </div>                                                                                      
+                                            </div> 
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div class="google-map" id="myMap" style="height: 300px"></div>
+                                        </div>
+                                    </div>
+                                </div>     
                             </div>
                         </div>
 
                         <h1>Escoge tus productos</h1>
                         <div class="step-content">
-
                             <div class="row">
-
                                 <div class="col-md-8">
                                     <div class="ibox-content m-b-sm border-bottom">
                                         <div class="row">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">                                                
                                                 <div class="form-group">
                                                     <label class="control-label" for="status">Tipo de producto</label>
                                                     <select name="status" id="status" class="form-control">
@@ -233,27 +247,25 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label" for="product_name">Nombre de producto</label>
                                                     <input type="text" id="product_name" name="product_name" value="" placeholder="Nombre de producto" class="form-control">
                                                 </div>
                                             </div>                                            
-                                        </div>
-                        
+                                        </div>    
+                                        <span class="text-muted small">
+                                            *La bodega Mi Jefita tiene un monto mínimo de S/. 15
+                                        </span>                    
                                     </div>
                                 </div>
     
-                                <div class="col-md-4">
-    
+                                <div class="col-md-4">    
                                     <div class="ibox">
-                                        <div class="ibox-title">
-                                            <h5><i class="fa fa-shopping-cart" style="padding-right: 15px;"></i>Monto del Pedido</h5>
-                                        </div>                                       
-                                        <div class="ibox-content">
-                                            <span class="text-muted small">
-                                                La bodega Mi Jefita tiene un monto mínimo de S/. 15
-                                                </span> <br> 
+                                        <!-- <div class="ibox-title">
+                                        </div>    -->                                    
+                                        <div class="ibox-content" style="padding: 14px 20px 14px 20px ;">
+                                            <h3 style="margin-bottom: 0px;"><i class="fa fa-shopping-cart" style="padding-right: 15px;"></i>Monto del Pedido</h3> 
                                                 <span>
                                                     <br>
                                                     Total
@@ -447,8 +459,8 @@
                                 </div>
                             </div>
 
-                            <div class="text-center m-t-md">                                
-                                <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="text-center m-t-md" style="margin-top: 0;">                                
+                                <div class="wrapper wrapper-content animated fadeInRight" style="padding-top: 0px;">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="ibox">
@@ -655,6 +667,12 @@
 
  <!-- Jquery Validate -->
  <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+ <!-- Maps Leaflet -->
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <script src="js/map.js"></script>
 
 
  <script>
