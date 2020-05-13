@@ -92,7 +92,7 @@ navigator.geolocation.getCurrentPosition(
 
       
 
-        var searchControl = L.esri.Geocoding.geosearch().addTo(myMap);
+        var searchControl = L.esri.Geocoding.geosearch({position:'topright'}).addTo(myMap);
 
         var results = L.layerGroup().addTo(myMap);
 
@@ -104,6 +104,7 @@ navigator.geolocation.getCurrentPosition(
               console.log(data)
               console.log(data.text)
               addres = data.text
+              document.getElementById("textsearch").value = data.results[i].text
               LatLng = data.results[i].latlng;
               console.log(LatLng)
               markerHome.setLatLng(LatLng);
