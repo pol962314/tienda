@@ -16,8 +16,11 @@ let iconStoreMarker = L.icon({
   shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
   shadowSize: [40, 70],
   shadowAnchor: [10, 75],
-  popupAnchor: [0, -60],
+  popupAnchor: [0, -40],
 })
+
+/* Dirección del punto */
+var addres 
 
 /* Marcador global */
 var markerHome
@@ -65,8 +68,9 @@ navigator.geolocation.getCurrentPosition(
   function setMap(latitude,longitude){
       var myMap = L.map('myMap').setView([latitude,longitude], 13)
 
-      L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, {
-          maxZoom: 18,
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
       }).addTo(myMap);
 
       /* Cargar el primer marcador */
@@ -85,6 +89,42 @@ navigator.geolocation.getCurrentPosition(
         this.storeMarkers[index].bindPopup(element[0]);
         console.log(this.storeMarkers)
       }
+
+      
+
+        var searchControl = L.esri.Geocoding.geosearch().addTo(myMap);
+
+        var results = L.layerGroup().addTo(myMap);
+
+          searchControl.on('results', function (data) {
+            let LatLng
+            results.clearLayers();
+            for (var i = data.results.length - 1; i >= 0; i--) {
+              /* this.markerHome.setLatLng(data.results[i].latlng); */
+              console.log(data)
+              console.log(data.text)
+              addres = data.text
+              LatLng = data.results[i].latlng;
+              console.log(LatLng)
+              markerHome.setLatLng(LatLng);
+              /* results.addLayer(L.marker(LatLng)); */
+              console.log(LatLng.lat)
+            }
+
+            /* Se debe actualizar las tiendas */
+            storeFeat[0] = ["Jefita",LatLng.lat+0.001, LatLng.lng+0.001]
+            storeFeat[1] = ["Bandita",LatLng.lat+0.001, LatLng.lng-0.001]
+            storeFeat[2] = ["Wallpas",LatLng.lat-0.001, LatLng.lng-0.001]
+
+            for (let index = 0; index < storeFeat.length; index++) {
+              const element = storeFeat[index];
+              myMap.removeLayer(storeMarkers[index])
+              storeMarkers[index] = new L.marker([element[1],element[2]],{icon: iconStoreMarker});
+              myMap.addLayer(storeMarkers[index]);
+              storeMarkers[index].bindPopup(element[0]);
+              console.log(storeMarkers)
+            }
+          });
       
       /* Editar el marcador con un click */
       myMap.on('click', e => {
@@ -136,12 +176,10 @@ navigator.geolocation.getCurrentPosition(
           myMap.addLayer(this.storeMarkers[index]);
           this.storeMarkers[index].bindPopup(element[0]);
         }
-        console.log("fina")
         myMap.addLayer(markerHome)
         this.markerHome = markerHome
       }
     )
-
       
 
   }

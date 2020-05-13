@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.2/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+    crossorigin="">
 
 
 
@@ -217,15 +220,15 @@
                             <div class="row">  
                                 <div class="col-md-12">
                                     <div class="ibox ">
-                                        <div class="ibox-title">
+                                        <!-- <div class="ibox-title">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <input type="text" id="product_name" name="product_name" value="" placeholder="Ingrese una dirección" class="form-control">
+                                                        <input type="text" id="addres" name="addres" value="" placeholder="Ingrese una dirección" class="form-control">
                                                     </div>
                                                 </div>                                                                                      
                                             </div> 
-                                        </div>
+                                        </div> -->
                                         <div class="ibox-content">
                                             <div class="google-map" id="myMap" style="height: 300px"></div>
                                         </div>
@@ -244,7 +247,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label" for="status">Tipo de producto</label>
                                                     <select name="status" id="status" class="form-control">
-                                                        <option value="0" selected></option>
+                                                        <option value="0" selected style="display: none;">Ej: Abarrotes</option>
                                                         <option value="1">Enlatados</option>
                                                         <option value="1">Bebidas</option>
                                                         <option value="1">Embutidos</option>
@@ -254,7 +257,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label" for="product_name">Nombre de producto</label>
-                                                    <input type="text" id="product_name" name="product_name" value="" placeholder="Nombre de producto" class="form-control">
+                                                    <input type="text" id="product_name" name="product_name" value="" placeholder="Ej: Arroz" class="form-control">
                                                 </div>
                                             </div>                                            
                                         </div>    
@@ -676,9 +679,15 @@
 
  <!-- Maps Leaflet -->
  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-  <script src="js/map.js"></script>
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
+ <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
+ integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
+ crossorigin=""></script>
+ <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.2/dist/esri-leaflet-geocoder.js"
+ integrity="sha512-8twnXcrOGP3WfMvjB0jS5pNigFuIWj4ALwWEgxhZ+mxvjF5/FBPVd5uAxqT8dd2kUmTVK9+yQJ4CmTmSg/sXAQ=="
+ crossorigin=""></script>
+ <script src="js/map.js"></script>
 
 
  <script>
