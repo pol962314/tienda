@@ -35,6 +35,8 @@ var storeFeat = [
 var storeMarkers = []
 console.log(storeFeat)
 
+/* Obtener dirección */
+
 
 /* Función de geolocalización */
 navigator.geolocation.getCurrentPosition(
@@ -73,11 +75,21 @@ navigator.geolocation.getCurrentPosition(
         maxZoom: 18,
       }).addTo(myMap);
 
-      /* Cargar el primer marcador */
-      markerHome = new L.marker([latitude, longitude], { icon: iconMarker, draggable:true});
-      myMap.addLayer(markerHome);
-      markerHome.bindPopup("<b>Home</b>").openPopup();
-      console.log(markerHome)
+      var geocodeService = L.esri.Geocoding.geocodeService();
+      geocodeService.reverse().latlng([latitude, longitude]).run(function (error, result) {
+        if (error) {
+          console.log(error);
+          return;
+        }
+
+        /* Cargar el primer marcador */
+        markerHome = new L.marker([latitude, longitude], { icon: iconMarker, draggable:true});
+        myMap.addLayer(markerHome);
+        markerHome.bindPopup(result.address.Match_addr).openPopup();
+        document.getElementById("textsearch").value = result.address.Match_addr
+        console.log(markerHome)
+
+      });
 
       for (let index = 0; index < this.storeFeat.length; index++) {
         const element = this.storeFeat[index];
@@ -106,10 +118,22 @@ navigator.geolocation.getCurrentPosition(
               addres = data.text
               document.getElementById("textsearch").value = data.results[i].text
               LatLng = data.results[i].latlng;
-              console.log(LatLng)
-              markerHome.setLatLng(LatLng);
-              /* results.addLayer(L.marker(LatLng)); */
-              console.log(LatLng.lat)
+              
+              geocodeService.reverse().latlng(LatLng).run(function (error, result) {
+                if (error) {
+                  console.log(error);
+                  return;
+                }
+      
+                /* Cargar el primer marcador */
+                console.log(LatLng)
+                markerHome.setLatLng(LatLng);
+                markerHome.bindPopup(result.address.Match_addr).openPopup();
+                /* results.addLayer(L.marker(LatLng)); */
+                console.log(LatLng.lat)
+      
+              });
+
             }
 
             /* Se debe actualizar las tiendas */
@@ -131,11 +155,20 @@ navigator.geolocation.getCurrentPosition(
       myMap.on('click', e => {
         /* myMap.removeLayer(markerHome) */
         let latLng = myMap.mouseEventToLatLng(e.originalEvent);
-        this.markerHome.setLatLng(latLng)
-        console.log(markerHome)
-        /* markerHome = L.marker([latLng.lat, latLng.lng], { icon: iconMarker, draggable:true});
-        myMap.addLayer(markerHome); */
-        markerHome.bindPopup("<b>Home</b>").openPopup();
+
+        geocodeService.reverse().latlng(latLng).run(function (error, result) {
+          if (error) {
+            console.log(error);
+            return;
+          }
+
+          /* Cargar el primer marcador */
+          markerHome.setLatLng(latLng);
+          document.getElementById("textsearch").value = result.address.Match_addr
+          markerHome.bindPopup(result.address.Match_addr).openPopup();
+          /* results.addLayer(L.marker(LatLng)); */
+
+        });
 
         /* Se debe actualizar las tiendas */
         this.storeFeat[0] = ["Jefita",latLng.lat+0.01, latLng.lng+0.01]
@@ -155,41 +188,34 @@ navigator.geolocation.getCurrentPosition(
 
       }
     )
-
-      markerHome.on('moveend',e =>{       
-        console.log(markerHome.getLatLng()) 
-        let latLngOn = markerHome.getLatLng();
-        markerHome.setLatLng(latLngOn)
-        console.log(markerHome)
-        
-
-        /* Se debe actualizar las tiendas */
-        this.storeFeat[0] = ["Jefita",latLngOn.lat+0.01, latLngOn.lng+0.01]
-        this.storeFeat[1] = ["Bandita",latLngOn.lat+0.01, latLngOn.lng-0.01]
-        this.storeFeat[2] = ["Wallpas",latLngOn.lat-0.01, latLngOn.lng-0.01]
-        console.log(this.storeFeat)
-
-
-        for (let index = 0; index < this.storeFeat.length; index++) {
-          const element = this.storeFeat[index];
-          myMap.removeLayer(this.storeMarkers[index])
-          this.storeMarkers[index] = new L.marker([element[1],element[2]],{icon: iconStoreMarker});
-          myMap.addLayer(this.storeMarkers[index]);
-          this.storeMarkers[index].bindPopup(element[0]);
-        }
-        myMap.addLayer(markerHome)
-        this.markerHome = markerHome
-      }
-    )
       
 
   }
-        
-   
-/* 
-let marker = L.marker([51.5, -0.09]).addTo(myMap)
+
+/* Deslizar el marcador */
+
+  /* markerHome.on('moveend',e =>{       
+    console.log(markerHome.getLatLng()) 
+    let latLngOn = markerHome.getLatLng();
+    markerHome.setLatLng(latLngOn)
+    console.log(markerHome)
+    
+
+    Se debe actualizar las tiendas
+    this.storeFeat[0] = ["Jefita",latLngOn.lat+0.01, latLngOn.lng+0.01]
+    this.storeFeat[1] = ["Bandita",latLngOn.lat+0.01, latLngOn.lng-0.01]
+    this.storeFeat[2] = ["Wallpas",latLngOn.lat-0.01, latLngOn.lng-0.01]
+    console.log(this.storeFeat)
 
 
-
-let marker2 = L.marker([51.51, -0.09], { icon: iconMarker }).addTo(myMap) */
-
+    for (let index = 0; index < this.storeFeat.length; index++) {
+      const element = this.storeFeat[index];
+      myMap.removeLayer(this.storeMarkers[index])
+      this.storeMarkers[index] = new L.marker([element[1],element[2]],{icon: iconStoreMarker});
+      myMap.addLayer(this.storeMarkers[index]);
+      this.storeMarkers[index].bindPopup(element[0]);
+    }
+    myMap.addLayer(markerHome)
+    this.markerHome = markerHome
+  }
+) */
