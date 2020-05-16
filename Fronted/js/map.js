@@ -9,6 +9,7 @@ let iconMarker = L.icon({
   popupAnchor: [0, -60],
 })
 
+/* Modificaciones del Marcador de Tiendas */
 let iconStoreMarker = L.icon({
   iconUrl: 'icon/supermarket-ic.png',
   iconSize: [30,30],
@@ -83,7 +84,7 @@ navigator.geolocation.getCurrentPosition(
         }
 
         /* Cargar el primer marcador */
-        markerHome = new L.marker([latitude, longitude], { icon: iconMarker, draggable:true});
+        markerHome = new L.marker([latitude, longitude], { icon: iconMarker/* , draggable:true */});
         myMap.addLayer(markerHome);
         markerHome.bindPopup(result.address.Match_addr).openPopup();
         document.getElementById("textsearch").value = result.address.Match_addr
