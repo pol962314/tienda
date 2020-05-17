@@ -13,8 +13,6 @@ let iconMarker = L.icon({
 var markerStore
 
 
-
-
 /* Función de geolocalización */
 navigator.geolocation.getCurrentPosition(
     (pos) => {
@@ -46,6 +44,22 @@ navigator.geolocation.getCurrentPosition(
           maxZoom: 18,
         }).addTo(myMap);
 
+        var searchControl = L.esri.Geocoding.geosearch({position:'topright'}).addTo(myMap);
+        myMap.addControl(searchControl);
+
+        var results = L.layerGroup().addTo(myMap);
+
+          /* Se modifica el marcador al hacer una busqueda */
+        searchControl.on('results', function (data) {
+            results.clearLayers();
+            for (var i = data.results.length - 1; i >= 0; i--) {
+              markerStore.setLatLng(data.results[i].latlng);
+              console.log(data.results[i].text)
+              document.getElementById("textsearch").value = data.results[i].text
+              }
+            });
+        
+
         /* obtiene dirección con coordenadas */
         var geocodeService = L.esri.Geocoding.geocodeService();
         geocodeService.reverse().latlng([latitude, longitude]).run(function (error, result) {
@@ -53,7 +67,6 @@ navigator.geolocation.getCurrentPosition(
             console.log(error);
             return;
           }
-
             /* Cargar el primer marcador */
           markerStore = new L.marker([latitude, longitude], { icon: iconMarker});
           myMap.addLayer(markerStore);
@@ -62,30 +75,10 @@ navigator.geolocation.getCurrentPosition(
 
         });
 
-
-        var searchControl = L.esri.Geocoding.geosearch({position:'topright'}).addTo(myMap);
-        myMap.addControl(searchControl);
-
-        var results = L.layerGroup().addTo(myMap);
-
-        /* Se modifica el marcador al hacer una busqueda */
-          searchControl.on('results', function (data) {
-            results.clearLayers();
-            for (var i = data.results.length - 1; i >= 0; i--) {
-              markerStore.setLatLng(data.results[i].latlng);
-              console.log(data.results[i].text)
-              document.getElementById("textsearch").value = data.results[i].text
-            }
-          });
-
-        
-
-        
         /* Editar el marcador con un click */
         myMap.on('click', e => {
 
           let latLng = myMap.mouseEventToLatLng(e.originalEvent);
-
 
           geocodeService.reverse().latlng([latLng.lat, latLng.lng]).run(function (error, result) {
             if (error) {
