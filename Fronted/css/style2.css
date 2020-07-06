@@ -6935,10 +6935,10 @@ body.landing-page {
   font-weight: 200;
 }
 .landing-page .navy-line {
-  width: 100%;
+  width: 60px;
   height: 1px;
-  margin: 30px auto 30px;
-  border-bottom: 2px solid #fff;
+  margin: 60px auto 0;
+  border-bottom: 2px solid #1ab394;
 }
 .landing-page .navbar-wrapper {
   position: fixed;
@@ -7205,7 +7205,7 @@ body.landing-page {
   padding: 20px 0;
 }
 .landing-page .gray-section {
-  background: #d43f3a;
+  background: #f4f4f4;
   margin-top: 60px;
 }
 .landing-page .team-member {

@@ -12,15 +12,11 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="css/plugins/bootstrapSocial/bootstrap-social.css" rel="stylesheet">
-    <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <!-- <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet"> -->
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.2/dist/esri-leaflet-geocoder.css"
-    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
-    crossorigin="">
+    <link rel="stylesheet" href="css/leaflet-apimap1.css" />
+    <link rel="stylesheet" type="text/css" href="css/leaflet-apimap2.css">  
 </head>
 
 <body class="gray-bg">
@@ -30,6 +26,7 @@
 
     <div class="form-group" id="toastTypeGroup" style="text-align: center;" >
         <h3>Registrate a Bodegaap</h3>
+        <div class="navy-line"></div>
         <div class="radio" style="display: inline;">
             <label class="radio" style="display: inline; margin-right: 5px;">
                 <input type="radio" name="perfil" class="perfil" value="Cliente" checked />Cliente
@@ -37,7 +34,7 @@
         </div>
         <div class="radio" style="display: inline;">
             <label class="radio" style="display: inline; margin-left: 5px;">
-                <input type="radio" name="perfil" class="perfil" value="Vendedor" />Vendedor
+                <input onclick="init()" type="radio" name="perfil" class="perfil" value="Vendedor" />Vendedor
             </label>
         </div>
     </div>
@@ -71,7 +68,7 @@
                     <div class="checkbox i-checks" style="text-align: center;"><label style="padding: 0px;"> <input type="checkbox"><i style="padding: 5px;"></i>Acepto los terminos y condiciones comerciales </label></div>
                 </div>         
                 
-                <button type="submit" class="btn btn-primary block full-width m-b">Registrar</button>
+                <button type="submit" class="btn btn-danger block full-width m-b">Registrar</button>
                 <a class="btn btn-block btn-social btn-facebook" style="text-align: center;" >
                     <span class="fa fa-facebook"></span> Registrarse con Facebook
                 </a>
@@ -82,7 +79,88 @@
         </div>
     </div>
 
-    <div id="vendedor" style="text-align: center; margin: 0px 10% 0 10% ; display: none;" >
+    <div id="vendedor" class="loginColumns   animated fadeInDown" style="padding: 0; display: table-column;">        
+        <div>
+            <p>Registro de bodega a BodegApp.</p>
+            <form class="m-t" role="form" action="login.html">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Datos del vendedor</h2>
+                        <div class="form-group">
+                            <input id="name" name="name" type="text" class="form-control required" placeholder="Nombres">
+                        </div>
+                        <div class="form-group">
+                            <input id="apellidop" name="apellidop" type="text" class="form-control required" placeholder="Apellido Paterno">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="last_name_m" placeholder="Apellido Materno" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="dni" placeholder="DNI" value="">
+                        </div>   
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="celular" placeholder="Número celular" value="">
+                        </div>   
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password2" placeholder="Repetir contraseña">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>Datos de la Bodega</h2>
+                        <div class="form-group">
+                            <input id="userName" name="userName" type="text" class="form-control required" placeholder="Nombre de la Bodega">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control required" placeholder="RUC" name="ruc" value=""
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="11">
+                        </div>
+                        <div class="form-group">
+                            <input id="razonsocial" name="razonsocial" type="text" class="form-control required" placeholder="Razón Social">
+                        </div>
+                        <div class="form-group">
+                            <input id="address" name="address" type="text" class="form-control required" placeholder="Dirección de la Bodega">
+                        </div>
+                        <div class="form-group">
+                            <input id="address" name="Departamento" type="text" class="form-control required" placeholder="Dirección de la Bodega">
+                        </div>
+                        <div class="form-group">
+                            <input id="address" name="Distrito" type="text" class="form-control required" placeholder="Dirección de la Bodega">
+                        </div>
+                        <div class="form-group">
+                            <input id="address" name="Provincia" type="text" class="form-control required" placeholder="Dirección de la Bodega">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">                        
+                        
+                       <div class="col-sm-12">
+                        <div class="google-map" id="map" style="height: 300px; position: relative; overflow: hidden;"></div>
+                       </div>
+                        <div class="form-group">
+                            <div class="checkbox i-checks" style="text-align: center;"><label style="padding: 0px;"> <input type="checkbox"><i style="padding: 5px;"></i>Acepto los terminos y condiciones comerciales </label></div>
+                        </div>         
+                        
+                        <button type="submit" class="btn btn-danger block full-width m-b">Registrar</button>
+                        <a class="btn btn-block btn-social btn-facebook" style="text-align: center;" >
+                            <span class="fa fa-facebook"></span> Registrarse con Facebook
+                        </a>
+        
+                        <p class="text-muted text-center"><small>¿Ya tienes una cuenta?</small></p>
+                        <a class="btn btn-sm btn-white btn-block" href="/login_usuario.html">Ingresa</a>
+                    
+                    </div>
+                </div>
+            </form>    
+        
+        </div>
+    </div>
+
+    <!-- <div id="vendedor" style="text-align: center; margin: 0px 10% 0 10% ; display: none;" >
             <div class="row" style="text-align: left;">
                 <div class="col-lg-12">
                     <div class="ibox">                   
@@ -180,13 +258,13 @@
                                                 </div> 
                                             </div>                                 
                                         </div>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-12">
                                             <div class="ibox ">
                                                 <div class="ibox-title">
                                                     <h5>Ubique su negocio.</h5>
                                                 </div>
-                                                <div class="ibox-content google-map">                                                    
-                                                    <div id="myMap" style="height: 300px"></div>
+                                                <div class="ibox-content">
+                                                    <div class="google-map" id="myMap" style="height: 300px"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,25 +275,15 @@
                     </div>
                     </div>
                 </div>
-    </div> 
+    </div> --> 
     <div style=" width: 100%; margin-top: 5%;">
         <iframe src="footer.html" frameborder="0"  style="width: 100%; height: 40px;"></iframe>
     </div>
     
-    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin=""></script>
-    <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
-    integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
-    crossorigin=""></script>
-    <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.2/dist/esri-leaflet-geocoder.js"
-    integrity="sha512-8twnXcrOGP3WfMvjB0jS5pNigFuIWj4ALwWEgxhZ+mxvjF5/FBPVd5uAxqT8dd2kUmTVK9+yQJ4CmTmSg/sXAQ=="
-    crossorigin=""></script>
-    <script src="js/mapReg.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.2/esri-leaflet.js"></script>
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>s
+  
 
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -228,25 +296,32 @@
     <script src="js/plugins/pace/pace.min.js"></script>
 
     <!-- Steps -->
-    <script src="js/plugins/steps/jquery.steps.min.js"></script>
 
     <!-- Jquery Validate -->
     <script src="js/plugins/validate/jquery.validate.min.js"></script>
 
     <!-- Sweet alert -->
-    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- <script src="js/plugins/sweetalert/sweetalert.min.js"></script> -->
 
     <!-- iCheck -->
     <script src="js/plugins/iCheck/icheck.min.js"></script>
 
+    <script src="js/mapReg.js"></script>
 
     <script>
+		function vendedor(){
+			init();
+		}
+    </script>
+    
+
+    <script>
+        var map = false;
         $(document).ready(function(){
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
-
             $(".perfil").click(function(evento){
                 var valor = $(this).val();
                 
@@ -256,10 +331,11 @@
                 }else{
                     $("#cliente").css("display", "none");
                     $("#vendedor").css("display", "block");
+                    this.map = true;
                 }
             });
 
-            $("#wizard").steps();
+            /* $("#wizard").steps();
             $("#form").steps({
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex)
@@ -350,9 +426,9 @@
                                 equalTo: "#password"
                             }
                         }
-                    });
+                    }); */
 
-        });        
+        }); 
     </script>
 
 

@@ -74,7 +74,7 @@
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-danger " href="#"><i class="fa fa-bars"></i> </a>
                     <form role="search" class="navbar-form-custom" action="search_results.html">
                         <div class="form-group">
                             <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
@@ -140,7 +140,7 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                            <i class="fa fa-bell"></i>  <span class="label label-danger">8</span>
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
@@ -249,11 +249,11 @@
 
                         <h1>Escoge tus productos</h1>
                         <div class="step-content">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="ibox-content m-b-sm border-bottom">
+                            <div class="row" style="padding-right: 20px;">
+                                <div class="col-md-10 col-xs-8">
+                                    <div class="ibox-content m-b-sm border-bottom" style="padding-top: 12px; padding-bottom: 8px; padding-right: 12px;">
                                         <div class="row">
-                                            <div class="col-sm-6">                                                
+                                            <!-- <div class="col-sm-6">                                                
                                                 <div class="form-group">
                                                     <label class="control-label" for="status">Tipo de producto</label>
                                                     <select name="status" id="status" class="form-control">
@@ -263,42 +263,38 @@
                                                         <option value="1">Embutidos</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="product_name">Nombre de producto</label>
-                                                    <input type="text" id="product_name" name="product_name" value="" placeholder="Ej: Arroz" class="form-control">
-                                                </div>
+                                            </div> -->
+                                            <div class="row col-sm-12 col-xs-12" style="padding-right: 0;">
+                                                <div class="form-group col-xs-12" style="margin-bottom: 0px;">
+                                                    <input type="text" id="product_name" name="product_name" value="" placeholder="Ej: Arroz" class="form-control input-sm">
+                                                </div>   
+                                                <span class="text-muted small visible-xs visible-sm" style=" padding-left: 15px; font-size: 10px;">
+                                                    *La bodega Mi Jefita tiene un monto mínimo de S/. 15
+                                                </span>   
+                                                <span class="text-muted small visible-md visible-lg" style=" padding-left: 16px;">
+                                                    *La bodega Mi Jefita tiene un monto mínimo de S/. 15
+                                                </span> 
                                             </div>                                            
-                                        </div>    
-                                        <span class="text-muted small">
-                                            *La bodega Mi Jefita tiene un monto mínimo de S/. 15
-                                        </span>                    
+                                        </div>                  
                                     </div>
                                 </div>
     
-                                <div class="col-md-4">    
-                                    <div class="ibox">
-                                        <!-- <div class="ibox-title">
-                                        </div>    -->                                    
-                                        <div class="ibox-content" style="padding: 14px 20px 14px 20px ;">
-                                            <h3 style="margin-bottom: 0px;"><i class="fa fa-shopping-cart" style="padding-right: 15px;"></i>Monto del Pedido</h3> 
-                                                <span>
-                                                    <br>
-                                                    Total
-                                                </span>                                            
-                                                <div class="pull-right" style="margin-top: 10px;">
-                                                    <button type="button" class="btn btn-outline btn-primary" style="padding-top: 5%;" data-toggle="modal" data-target="#myModal5"><i class="fa fa-file-text-o" style="padding-right: 15px;"></i>Ver Pedido</button>                                          
+                                <div class="col-md-2 col-xs-4" style="padding-left: 5px; padding-right: 10px;">    
+                                    <div class="ibox" style="color: lightslategrey;">                                        
+                                        <div class="ibox-content row" style="padding: 14px 10px 14px 10px ; color: lightslategrey;">
+                                            <div class="col-xs-4"style="padding-left: 2px; padding-right: 2px;  text-align: center;">                                            
+                                                <div  class="count-info"  style="padding-right: 20px; padding-left: 2px; position: absolute;" data-toggle="modal" data-target="#myModal5">
+                                                    <i class="fa fa-shopping-cart ic-ini" style="color: lightslategrey; font-size: 20px; margin-left: 10px; margin-top: 15px;"></i>
+                                                    <span class="label label-warning" style="margin-top: -8px;margin-left:20px;">8</span>
                                                 </div>
-
                                                 <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                                                 <h4 class="modal-title">Carrito de compra</h4>
-<!--                                                                 <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
- -->                                                            </div>
+        <!--                                                                 <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+        -->                                                            </div>
                                                             <div class="modal-body">
                                                                 <div class="ibox">
                                                                     <div class="ibox-title">
@@ -446,13 +442,14 @@
                                                                                     </td>
                                             
                                                                                 </tr>
+                                                                                
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
                                             
                                                                     </div>
                                                                     <!-- <div class="ibox-content">                                            
-                                                                        <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                                                                        <button class="btn btn-danger pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
                                                                         <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
                                                                     </div> -->
                                                                 </div>
@@ -460,17 +457,22 @@
                     
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                <button type="button" class="btn btn-danger">Save changes</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                 <div>                                                  
-                                                    <h2 class="font-bold">
-                                                        S/. 28.00
-                                                    </h2>  
-                                                 </div>                                                
+                                                </div>                                               
+                                            </div>
+                                            <div class="col-xs-8" style="padding-left: 2px; padding-right: 2px;">
+                                                <h5 class="font-bold visible-md visible-lg" style="color: lightslategrey;margin-left: 15px;" >
+                                                    Total:
+                                                    <br> S/. 28.00
+                                                </h5>
+                                                <h6 class="font-bold visible-xs visible-sm" style="color: lightslategrey;margin-left: 15px;" >
+                                                    Total:
+                                                    <br> S/. 28.00
+                                                </h6>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -479,7 +481,7 @@
                             <div class="text-center m-t-md" style="margin-top: 0;">                                
                                 <div class="wrapper wrapper-content animated fadeInRight" style="padding-top: 0px;">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                                             <div class="ibox">
                                                 <div class="ibox-content product-box">
                         
@@ -496,7 +498,7 @@
                                                             Atún San Fernando en filete de 850gr.
                                                         </div>
                                                         <div class="m-t text-righ">
-                                                            <a href="#" class="btn btn-xs btn-outline btn-primary">Agregar <i class="fa fa-shopping-cart"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-outline btn-danger">Agregar <i class="fa fa-shopping-cart"></i> </a>
                                                         </div>
 
                                                         <div class="table-responsive">
@@ -520,7 +522,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                                             <div class="ibox">
                                                 <div class="ibox-content product-box">
                         
@@ -540,7 +542,7 @@
                                                             Atún florida en filetes de 500gr la presentación.
                                                         </div>
                                                         <div class="m-t text-righ">
-                                                            <a href="#" class="btn btn-xs btn-primary">Agregado<i class="fa fa-shopping-cart"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-danger">Agregado<i class="fa fa-shopping-cart"></i> </a>
                                                         </div>
 
                                                         <div class="table-responsive">
@@ -563,7 +565,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                                             <div class="ibox">
                                                 <div class="ibox-content product-box active">
                         
@@ -580,7 +582,7 @@
                                                             Aceite Primor en presentación de 850mL.
                                                         </div>
                                                         <div class="m-t text-righ">
-                                                            <a href="#" class="btn btn-xs btn-primary">Agregado <i class="fa fa-shopping-cart"></i> </a>
+                                                            <a href="#" class="btn btn-xs btn-danger">Agregado <i class="fa fa-shopping-cart"></i> </a>
                                                         </div>
 
                                                         <div class="table-responsive">
@@ -604,7 +606,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-md-3">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                                             <div class="ibox">
                                                 <div class="ibox-content product-box">
                         
@@ -623,21 +625,24 @@
                                                         <div class="small m-t-xs">
                                                             Arroz Costeño suelto de S/1.00 el Kg.
                                                         </div>
-                                                        <div class="m-t text-righ">
-                                                            <a href="#" class="btn btn-xs btn-primary">Agregado<i class="fa fa-shopping-cart"></i> </a>
-                                                        </div>
+                                                        
 
-                                                        <div class="table-responsive">
+                                                        <div class="table-responsive" style="color: lightslategray;">
                                                             <table class="table shoping-cart-table">                            
                                                                 <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <h4>
+                                                                    <td style="padding-left: 3px; padding-right:3px;">
+                                                                        <h5>
                                                                             Cant.
-                                                                        </h4>
+                                                                        </h5>
                                                                     </td>
-                                                                    <td>
+                                                                    <td style="padding-left: 3px; padding-right:3px;">
                                                                         <input type="text" class="form-control" placeholder="3Kg">
+                                                                    </td>
+                                                                    <td style="padding-left: 3px; padding-right:3px;">
+                                                                        <div class="m-t text-righ">
+                                                                            <a href="#" class="btn btn-xs btn-danger">Agregado<i class="fa fa-shopping-cart"></i> </a>
+                                                                        </div>
                                                                     </td>
                                                                 </tr>
                                                                 </tbody>
@@ -647,10 +652,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                        
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                    <div class="btn-group" style="color: lightslategrey;">
+                                        <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                                        <button class="btn btn-white">1</button>
+                                        <button class="btn btn-white  active">2</button>
+                                        <button class="btn btn-white">3</button>
+                                        <button class="btn btn-white">4</button>
+                                        <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>

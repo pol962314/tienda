@@ -1,0 +1,36 @@
+header:
+Cambiar el titulo: Cotiza tu pedido en 3 pasos (v).
+
+Home:
+cambiar el tamaño del marker home y marker store.(v)
+que se vea abierto el buscador del mapa con un placeholder.(v)
+el mapa todo el ancho. (v)
+el buscador va al realizar el pago.(v)
+
+Productos:
+cambiar el placeholder: Buscar productos(v)
+ver detalle bajo el carro.(v)
+agrandar el icono del carro.(v)
+reducir la distancia entre el buscador y los productos(v)
+aumentar el height del buscador (v)
+poner la U. de medida junto al nombre en los productos(v)
+cantidad por cant(V)
+dejar el buscador y carrito arriba fijo.(v)	
+alerta para carrito vacio. (seleccione al menos un producto)
+
+Detalle:
+cotizar pedido (titulo) (v)
+ocultar (eliminar todos los productos) (v)
+poner de cabecera: detalle del pedido (v)
+"enviar solicitud a tienda" grande y centrado (v)
+"continuar compra" sin fondo y más chico. (v)
+alert al enviar pedido por monto menor al mínimo
+
+thank:
+en breve la tienda confirmará tu solicitud vía correo.
+mns más chico y en plomo: puedes darle seguimiento a tu pedido aquí o hacer otra compra.
+
+track
+4to estado: el vendor está preparando el pedido
+
+
